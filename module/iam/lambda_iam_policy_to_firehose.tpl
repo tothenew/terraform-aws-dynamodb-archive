@@ -16,7 +16,7 @@
                     ],
             "Resource": "*"
         },
-        {s
+        {
             "Effect": "Allow",
             "Action": [
                   "logs:CreateLogGroup",
