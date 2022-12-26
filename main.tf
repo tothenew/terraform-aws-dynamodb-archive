@@ -26,7 +26,6 @@ module "firehose_stream" {
 module "lambda_iam" {
   source               = "./module/iam/lambda"
   lambda_iam_role_name = var.lambda_iam_role_name
-  s3_bucket_name       = var.s3_bucket_name
   dynamoDB_stream_arn  = data.aws_dynamodb_table.dynamoDB_table.arn
   firehose_stream_name = var.kinesis_firehose_stream_name
   common_tags          = var.common_tags
