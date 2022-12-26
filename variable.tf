@@ -19,11 +19,6 @@ variable "lambda_iam_role_name" {
   description = "A string value for Lambda IAM Role Name"
 }
 
-variable "lambda_iam_role_description" {
-  type        = string
-  description = "A string value for Lambda IAM Role Description"
-}
-
 variable "firehose_iam_role_name" {
   type        = string
   description = "A string value for Kinesis IAM Role Name"

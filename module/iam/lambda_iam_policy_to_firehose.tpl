@@ -16,24 +16,24 @@
                     ],
             "Resource": "*"
         },
+        {s
+            "Effect": "Allow",
+            "Action": [
+                  "logs:CreateLogGroup",
+                  "logs:CreateLogStream",
+                  "logs:PutLogEvents"
+            ],
+            "Resource": "*"
+        },
         {
-        "Effect": "Allow",
-        "Action": [
-          "logs:CreateLogGroup",
-          "logs:CreateLogStream",
-          "logs:PutLogEvents"
-        ],
-        "Resource": "*"
-      },
-        {
-"Effect": "Allow",
-"Action": [
-"dynamodb:GetShardIterator",
-"dynamodb:DescribeStream",
-"dynamodb:ListStreams",
-"dynamodb:GetRecords"
-],
-"Resource": "*"
-}
+            "Effect": "Allow",
+            "Action": [
+                  "dynamodb:GetShardIterator",
+                  "dynamodb:DescribeStream",
+                  "dynamodb:ListStreams",
+                  "dynamodb:GetRecords"
+              ],
+            "Resource": "*"
+      }
     ]
 }

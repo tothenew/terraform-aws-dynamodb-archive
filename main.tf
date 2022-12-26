@@ -7,8 +7,6 @@ module "iam_resources" {
   source                        = "./module/iam"
   lambda_iam_role_name          = var.lambda_iam_role_name
   firehose_iam_role_name        = var.firehose_iam_role_name
-  lambda_iam_role_description   = var.lambda_iam_role_description
-  firehose_iam_role_description = var.firehose_iam_role_description
   s3_bucket_name                = var.s3_bucket_name
   common_tags                   = var.common_tags
 }

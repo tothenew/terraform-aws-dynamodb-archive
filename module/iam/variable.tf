@@ -10,6 +10,7 @@ variable "lambda_iam_role_name" {
 
 variable "lambda_iam_role_description" {
   type    = string
+  default =  "Allow Lambda to access Kinesis Firhose Stream and DynamoDB Stream"
   description = "A string value for Lambda IAM Role Description"
 }
 
@@ -20,6 +21,7 @@ variable "firehose_iam_role_name" {
 
 variable "firehose_iam_role_description" {
   type    = string
+  default =  "Allow Firehose Stream to access S3 Bucket"
   description = "A string value for Kinesis IAM Role Description"
 }
 
