@@ -55,7 +55,3 @@ variable "dynamodb_table_stream_arn" {
 
 
 
-user name:- alpha_report_cron
-password:- kkETdu4JphHQzxu8
-
-A9nPMZm9spwBFq68
