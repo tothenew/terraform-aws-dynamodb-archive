@@ -8,16 +8,16 @@ resource "aws_kinesis_firehose_delivery_stream" "kinesis_firehose_stream" {
     buffer_interval     = 60
     error_output_prefix = "error/"
     cloudwatch_logging_options {
-      enabled = true
-      log_group_name = aws_cloudwatch_log_group.kinesis_log_group.name
+      enabled         = true
+      log_group_name  = aws_cloudwatch_log_group.kinesis_log_group.name
       log_stream_name = "transaction_logs"
     }
   }
-  tags_all = merge(var.common_tags, {"Name"="${var.kinesis_firehose_stream_name}-stream"})
+  tags_all = merge(var.common_tags, { "Name" = "${var.kinesis_firehose_stream_name}-stream" })
 }
 
 resource "aws_cloudwatch_log_group" "kinesis_log_group" {
   name              = "/aws/kinesis/${var.kinesis_firehose_stream_name}-stream"
   retention_in_days = 7
-  tags              = merge(var.common_tags, {"Name" = "${var.kinesis_firehose_stream_name}-stream"})
+  tags              = merge(var.common_tags, { "Name" = "${var.kinesis_firehose_stream_name}-stream" })
 }

@@ -8,14 +8,14 @@ data "template_file" "firehose_iam_policy" {
 resource "aws_iam_policy" "firehose_iam_policy" {
   name        = "${var.firehose_iam_role_name}-firehose-policy"
   description = "A policy for Kinesis Firehose to write to S3"
-  policy = data.template_file.firehose_iam_policy.rendered
-  tags_all = merge(var.common_tags, {"Name"="${var.firehose_iam_role_name}-firehose-policy"})
+  policy      = data.template_file.firehose_iam_policy.rendered
+  tags_all    = merge(var.common_tags, { "Name" = "${var.firehose_iam_role_name}-firehose-policy" })
 }
 
 resource "aws_iam_role" "firehose_aws_role" {
   name        = "${var.firehose_iam_role_name}-role"
   description = var.firehose_iam_role_description
-  tags_all = var.common_tags
+  tags_all    = var.common_tags
 
   assume_role_policy = <<EOF
 {
@@ -32,7 +32,7 @@ resource "aws_iam_role" "firehose_aws_role" {
   ]
 }
 EOF
-  tags = merge(var.common_tags, {"Name"="${var.firehose_iam_role_name}-role"})
+  tags               = merge(var.common_tags, { "Name" = "${var.firehose_iam_role_name}-role" })
 }
 
 resource "aws_iam_role_policy_attachment" "firehose_iam_attach" {
@@ -51,14 +51,14 @@ data "template_file" "lambda_iam_policy" {
 resource "aws_iam_policy" "lambda_iam_policy" {
   name        = "${var.lambda_iam_role_name}-lambda-policy"
   description = "A policy to allow Lambda to Write to Kinesis Firehose"
-  policy = data.template_file.lambda_iam_policy.rendered
-  tags_all = merge(var.common_tags, {"Name"="${var.lambda_iam_role_name}-lambda-policy"})
+  policy      = data.template_file.lambda_iam_policy.rendered
+  tags_all    = merge(var.common_tags, { "Name" = "${var.lambda_iam_role_name}-lambda-policy" })
 }
 
 resource "aws_iam_role" "lambda_aws_role" {
   name        = "${var.lambda_iam_role_name}-role"
   description = var.lambda_iam_role_description
-  tags_all = var.common_tags
+  tags_all    = var.common_tags
 
   assume_role_policy = <<EOF
 {
@@ -75,7 +75,7 @@ resource "aws_iam_role" "lambda_aws_role" {
   ]
 }
 EOF
-  tags = merge(var.common_tags, {"Name"="${var.lambda_iam_role_name}-role"})
+  tags               = merge(var.common_tags, { "Name" = "${var.lambda_iam_role_name}-role" })
 }
 
 resource "aws_iam_role_policy_attachment" "lambda_iam_attach" {

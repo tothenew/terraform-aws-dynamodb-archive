@@ -4,11 +4,11 @@ data "aws_region" "current" {
 
 ## IAM Resources ##
 module "iam_resources" {
-  source                        = "./module/iam"
-  lambda_iam_role_name          = var.lambda_iam_role_name
-  firehose_iam_role_name        = var.firehose_iam_role_name
-  s3_bucket_name                = var.s3_bucket_name
-  common_tags                   = var.common_tags
+  source                 = "./module/iam"
+  lambda_iam_role_name   = var.lambda_iam_role_name
+  firehose_iam_role_name = var.firehose_iam_role_name
+  s3_bucket_name         = var.s3_bucket_name
+  common_tags            = var.common_tags
 }
 ## Kinesis Resources ##
 module "firehose_stream" {
