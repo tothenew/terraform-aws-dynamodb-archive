@@ -43,6 +43,9 @@ def lambda_handler(event, context):
     except botocore.exceptions.ClientError as error:
         logging.info("Error while putting data")
         logging.info(error)
+        return {
+            'status': False
+        }
     return {
             'status': True
         }

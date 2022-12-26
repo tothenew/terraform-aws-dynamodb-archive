@@ -3,17 +3,6 @@ variable "s3_bucket_name" {
   description = "A string value for Destination S3 Bucket"
 }
 
-variable "lambda_iam_role_name" {
-  type        = string
-  description = "A string value for Lambda IAM Role Name"
-}
-
-variable "lambda_iam_role_description" {
-  type        = string
-  default     = "Allow Lambda to access Kinesis Firhose Stream and DynamoDB Stream"
-  description = "A string value for Lambda IAM Role Description"
-}
-
 variable "firehose_iam_role_name" {
   type        = string
   description = "A string value for Kinesis IAM Role Name"

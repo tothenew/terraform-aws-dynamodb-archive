@@ -43,9 +43,9 @@ variable "lambda_function_name" {
   description = "A string for Lambda Function Name"
 }
 
-variable "dynamodb_table_stream_arn" {
+variable "dynamodb_table_name" {
   type        = string
-  description = "A string for Source DynamoDB Table Stream ARN"
+  description = "A string for Source DynamoDB Table Name"
 }
 
 
