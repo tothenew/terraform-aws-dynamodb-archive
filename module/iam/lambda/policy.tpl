@@ -14,7 +14,7 @@
                     "firehose:StopDeliveryStreamEncryption",
                     "firehose:UpdateDestination"
                     ],
-            "Resource": "arn:aws:firehose:${region_name}:${account_id}:deliverystream/{firehose_stream_name}"
+            "Resource": "arn:aws:firehose:${region_name}:${account_id}:deliverystream/${firehose_stream_name}"
         },
         {
             "Effect": "Allow",
@@ -33,7 +33,7 @@
                   "dynamodb:ListStreams",
                   "dynamodb:GetRecords"
               ],
-            "Resource": "{dynamoDB_stream_arn}"
+            "Resource": "${dynamoDB_stream_arn}"
       }
     ]
 }
