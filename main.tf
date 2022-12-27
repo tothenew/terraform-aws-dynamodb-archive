@@ -1,15 +1,4 @@
 
-data "aws_region" "current" {
-}
-
-data "aws_dynamodb_table" "dynamoDB_table" {
-  name = var.dynamodb_table_name
-}
-
-locals {
-  dynamoDB_stream_name = data.aws_dynamodb_table.dynamoDB_table.arn
-}
-
 ## IAM Resources ##
 module "firehose_iam" {
   source                 = "./module/iam/firehose"
