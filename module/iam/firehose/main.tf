@@ -6,10 +6,10 @@ data "template_file" "firehose_iam_policy" {
 }
 
 resource "aws_iam_policy" "firehose_iam_policy" {
-  name        = "${var.firehose_iam_role_name}-firehose-policy"
+  name        = "${var.firehose_iam_role_name}-policy"
   description = "A policy for Kinesis Firehose to write to S3"
   policy      = data.template_file.firehose_iam_policy.rendered
-  tags_all    = merge(var.common_tags, { "Name" = "${var.firehose_iam_role_name}-firehose-policy" })
+  tags_all    = merge(var.common_tags, { "Name" = "${var.firehose_iam_role_name}-policy" })
 }
 
 resource "aws_iam_role" "firehose_aws_role" {

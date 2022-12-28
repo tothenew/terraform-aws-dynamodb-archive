@@ -15,10 +15,10 @@ data "template_file" "lambda_iam_policy" {
 }
 
 resource "aws_iam_policy" "lambda_iam_policy" {
-  name        = "${var.lambda_iam_role_name}-lambda-policy"
+  name        = "${var.lambda_iam_role_name}-policy"
   description = "A policy to allow Lambda to Write to Kinesis Firehose"
   policy      = data.template_file.lambda_iam_policy.rendered
-  tags_all    = merge(var.common_tags, { "Name" = "${var.lambda_iam_role_name}-lambda-policy" })
+  tags_all    = merge(var.common_tags, { "Name" = "${var.lambda_iam_role_name}-policy" })
 }
 
 resource "aws_iam_role" "lambda_aws_role" {
