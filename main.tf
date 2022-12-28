@@ -3,7 +3,7 @@
 resource "aws_s3_bucket" "s3_bucket" {
   count  = var.create_new_bucket ? 1 : 0
   bucket = var.s3_bucket_name
-  tags = var.common_tags
+  tags   = var.common_tags
 }
 
 module "firehose_iam" {
