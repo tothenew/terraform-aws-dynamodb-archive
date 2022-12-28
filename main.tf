@@ -1,9 +1,10 @@
 
 ## IAM Resources ##
-resource "aws_s3_bucket" "s3_bucket" {
-  count  = var.create_new_bucket ? 1 : 0
-  bucket = var.s3_bucket_name
-  tags   = var.common_tags
+module "s3" {
+  source         = "./module/s3"
+  count          = var.create_new_bucket ? 1 : 0
+  s3_bucket_name = var.s3_bucket_name
+  common_tags    = var.common_tags
 }
 
 module "firehose_iam" {
@@ -17,7 +18,7 @@ module "firehose_iam" {
 module "firehose_stream" {
   source                       = "./module/kinesis"
   firehose_aws_role            = module.firehose_iam.firehose_iam_role_arn
-  s3_bucket_name               = var.s3_bucket_name
+  s3_bucket_name               = var.create_new_bucket ? module.s3[0].s3_bucket_name : var.s3_bucket_name
   kinesis_firehose_stream_name = local.kinesis_firehose_stream_name
   common_tags                  = var.common_tags
 }

@@ -6,7 +6,7 @@ variable "project_name_prefix" {
 
 variable "create_new_bucket" {
   type        = bool
-  description = "A Variable to choose if new bucket is to be created or not."
+  description = "A Variable to choose if new bucket is to be created(true/false)."
 }
 
 variable "s3_bucket_name" {
