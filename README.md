@@ -20,7 +20,6 @@ module "dynamodb_archive" {
 ```
 
 <!-- BEGIN_TF_DOCS -->
-
 ## Requirements
 
 | Name | Version |
@@ -38,13 +37,13 @@ module "dynamodb_archive" {
 
 ## Modules
 
-| Name | Source | Version  |
-|------|--------|----------|
-| <a name="module_firehose_iam"></a> [firehose\_iam](#module\_firehose\_iam) | ./module/iam/firehose | = 1.3.0  |
-| <a name="module_firehose_stream"></a> [firehose\_stream](#module\_firehose\_stream) | ./module/kinesis | = 1.3.0  |
-| <a name="module_lambda_archive"></a> [lambda\_archive](#module\_lambda\_archive) | ./module/lambda | = 1.3.0  |
-| <a name="module_lambda_iam"></a> [lambda\_iam](#module\_lambda\_iam) | ./module/iam/lambda | = 1.3.0  |
-| <a name="module_s3"></a> [s3](#module\_s3) | ./module/s3 | = 1.3.0  |
+| Name | Source | Version |
+|------|--------|---------|
+| <a name="module_firehose_iam"></a> [firehose\_iam](#module\_firehose\_iam) | ./module/iam/firehose | n/a |
+| <a name="module_firehose_stream"></a> [firehose\_stream](#module\_firehose\_stream) | ./module/kinesis | n/a |
+| <a name="module_lambda_archive"></a> [lambda\_archive](#module\_lambda\_archive) | ./module/lambda | n/a |
+| <a name="module_lambda_iam"></a> [lambda\_iam](#module\_lambda\_iam) | ./module/iam/lambda | n/a |
+| <a name="module_s3"></a> [s3](#module\_s3) | ./module/s3 | n/a |
 
 ## Resources
 
@@ -68,7 +67,6 @@ module "dynamodb_archive" {
 |------|-------------|
 | <a name="output_kinesis-firehose-stream-arn"></a> [kinesis-firehose-stream-arn](#output\_kinesis-firehose-stream-arn) | n/a |
 | <a name="output_lambda_arn"></a> [lambda\_arn](#output\_lambda\_arn) | n/a |
-
 <!-- END_TF_DOCS -->
 
 ## Authors
