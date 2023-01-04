@@ -3,14 +3,21 @@
 [![Lint Status](https://github.com/tothenew/terraform-aws-template/workflows/Lint/badge.svg)](https://github.com/tothenew/terraform-aws-template/actions)
 [![LICENSE](https://img.shields.io/github/license/tothenew/terraform-aws-template)](https://github.com/tothenew/terraform-aws-template/blob/master/LICENSE)
 
-This is a template to use for baseline. The default actions will provide updates for section bitween Requirements and Outputs.
-
 The following content needed to be created and managed:
- - Introduction
-     - Explaination of module 
-     - Intended users
- - Resource created and managed by this module
- - Example Usages
+- Introduction
+   - This module will read and filter the data from DynamoDB Stream and write it to AWS Kinesis Firehose Stream. Firehose will further send it to S3 Buckets. 
+   - This will archive the old Data in S3 for longer duration. 
+
+# Usages
+```
+module "dynamodb_archive" {
+  source              = "git::https://github.com/tothenew/terraform-aws-dynamodb-archive.git"
+  project_name_prefix = "tothenew"
+  create_new_bucket   = false
+  s3_bucket_name      = "destination-s3-bucket"
+  dynamodb_table_name = "dynamodb_table"
+}
+```
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
