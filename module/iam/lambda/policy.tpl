@@ -33,7 +33,7 @@
                   "dynamodb:ListStreams",
                   "dynamodb:GetRecords"
               ],
-            "Resource": "${dynamoDB_stream_arn}"
+            "Resource": "${dynamoDB_stream_arn}/stream/*"
       }
     ]
 }

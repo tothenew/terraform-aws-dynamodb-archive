@@ -37,7 +37,7 @@ module "lambda_archive" {
   lambda_function_name         = local.lambda_function_name
   kinesis_firehose_stream_name = local.kinesis_firehose_stream_name
   lambda_role_arn              = module.lambda_iam.lambda_aws_role_arn
-  dynamodb_table_stream_arn    = local.dynamoDB_stream_name
+  dynamodb_table_stream_arn    = data.aws_dynamodb_table.dynamoDB_table.stream_arn
   common_tags                  = var.common_tags
 }
 
