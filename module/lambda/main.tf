@@ -16,7 +16,7 @@ resource "aws_lambda_function" "lambda_function" {
 
   environment {
     variables = {
-      KINESIS_FIRESHOSE_STREAM = var.kinesis_firehose_stream_name
+      KINESIS_FIRESHOSE_STREAM = "${var.kinesis_firehose_stream_name}-stream"
     }
   }
 
