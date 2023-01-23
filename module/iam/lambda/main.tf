@@ -9,7 +9,7 @@ data "template_file" "lambda_iam_policy" {
   vars = {
     account_id           = data.aws_caller_identity.current.account_id
     region_name          = data.aws_region.current.name
-    firehose_stream_name = var.firehose_stream_name
+    firehose_stream_name = "${var.firehose_stream_name}-stream"
     dynamoDB_stream_arn  = var.dynamoDB_stream_arn
   }
 }
