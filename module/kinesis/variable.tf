@@ -18,3 +18,15 @@ variable "common_tags" {
   type        = map(string)
   description = "A map to add common tags to all the resources"
 }
+
+variable "buffering_size" {
+  type        = number
+  default     = 5
+  description = "Buffer size in MB before data is delivered to S3"
+}
+
+variable "buffering_interval" {
+  type        = number
+  default     = 300
+  description = "Buffer interval in seconds before data is delivered to S3"
+}
