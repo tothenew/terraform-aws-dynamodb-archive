@@ -5,8 +5,8 @@ resource "aws_kinesis_firehose_delivery_stream" "kinesis_firehose_stream" {
   extended_s3_configuration {
     role_arn            = var.firehose_aws_role
     bucket_arn          = "arn:aws:s3:::${var.s3_bucket_name}"
-    bufferung_size = 5
-    buffering_interval     = 300
+    bufferung_size = var.buffering_size
+    buffering_interval     = var.buffering_interval
     error_output_prefix = "error/"
     cloudwatch_logging_options {
       enabled         = true
